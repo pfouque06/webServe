@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  webserve:
+    image: nginx:alpine
+    volumes:
+      - type: bind
+        source: ..\angular\Angular-Material-Showroom\dist\angular-material-sandbox01
+        target: /usr/share/nginx/html
+      - ./nginx.conf:/etc/nginx.conf
+    working_dir: /usr/share/nginx/html
+    ports:
+      - "80:80"
