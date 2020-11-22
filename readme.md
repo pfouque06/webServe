@@ -1,11 +1,4 @@
-for windows : bind volumes this way :
-
-      - type: bind
-        source: ./source_local_directory
-        target: c:\target_directory
-        bind:
-            propagation: cached
-
-
-for Linux :
-        -  ../angular/Angular-Material-Showroom/dist/angular-material-sandbox01:/usr/share/nginx/html:ro
+Add docker-compose.yml and default.conf in your web project root.  
+Adapt following inputs :  
+- url (www.example.com with your fqdn in both file)  
+- directories of web files (volume lines defining /usr/share/nginx/html/ in docker-compose.yml file)
