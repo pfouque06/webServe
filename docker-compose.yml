@@ -4,9 +4,6 @@ services:
       container_name: webserve_www.example.com
       image: nginx:alpine
       restart: always
-      build:
-          context: ./
-          dockerfile: ./nginx/Dockerfile
 
       volumes:
         - ./default.conf:/etc/nginx/conf.d/default.conf
@@ -17,11 +14,13 @@ services:
         - VIRTUAL_HOST=www.example.com # Enviroment variable needed for nginx proxy
         - LETSENCRYPT_HOST=www.pfouque.fr # Enviroment variables needed for Let's Encrypt companion
         - LETSENCRYPT_EMAIL=pfouque@gmail.com
+
       expose:
         - "80" # Expose http port
         - "443" # along with https port
       networks:
         - nginx-proxy # Connect this container to network named nginx-proxy, that will be described below
+        
       logging:
         driver: json-file
         options:
