@@ -11,8 +11,8 @@ services:
       working_dir: /usr/share/nginx/html
 
       environment:
-        - VIRTUAL_HOST=www.example.com # Enviroment variable needed for nginx proxy
-        - LETSENCRYPT_HOST=www.pfouque.fr # Enviroment variables needed for Let's Encrypt companion
+        - VIRTUAL_HOST=www.example.com,localhost # Enviroment variable needed for nginx proxy
+        - LETSENCRYPT_HOST=www.example.com # Enviroment variables needed for Let's Encrypt companion
         - LETSENCRYPT_EMAIL=pfouque@gmail.com
 
       expose:
